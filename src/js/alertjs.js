@@ -1,3 +1,11 @@
+/**
+ * AlertJS
+ *
+ * @author Lars von Qualen <lars@larsvonqualen.dk>
+ * @license MIT License
+ * @copyright Lars von Qualen 2013
+ */
+
 var AlertJS = (function (alertjs) {
 	alertjs.Init = function () {
 		$("body").append($("<div />").addClass("alertjs-notifications"));
