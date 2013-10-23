@@ -115,3 +115,7 @@ var AlertJS = (function (alertjs) {
 
 	return alertjs;
 })(AlertJS || {});
+
+$(document).ready(function () {
+	AlertJS.Init();
+});

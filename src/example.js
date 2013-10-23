@@ -30,6 +30,4 @@ $(document).ready(function () {
 	$("#TriggerSuccessAlert").on("click", function () {
 		AlertJS.Alert.Success("Success", "This is a success message.");
 	});
-
-	AlertJS.Init();
 });
