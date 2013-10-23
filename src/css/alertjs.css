@@ -1,10 +1,18 @@
 /* Colors */
+body {
+  padding: 0 !important;
+  margin: 0 !important; }
+
 .alertjs-notifications {
   z-index: 1000;
   position: fixed;
   bottom: 1em;
   right: 1em;
   width: auto; }
+
+.alertjs-alerts {
+  display: block;
+  height: auto; }
 
 .alertjs {
   -webkit-box-sizing: border-box;
@@ -18,6 +26,7 @@
   font-family: sans-serif;
   padding: 1em;
   position: relative;
+  display: none;
   border-width: 1px;
   border-style: solid; }
   .alertjs h1 {
@@ -29,37 +38,46 @@
     font-size: 10pt;
     margin: 0 !important;
     padding: 0 !important; }
-  .alertjs a.close {
+  .alertjs a.alertjs-close {
     position: absolute;
     top: 1em;
     right: 1em;
     text-decoration: none; }
-  .alertjs.notification {
+  .alertjs.alertjs-notification {
     -webkit-border-radius: 5px;
     border-radius: 5px;
     width: 20em;
     margin-bottom: 1em; }
-  .alertjs.error {
+  .alertjs.alertjs-alert {
+    border-top: 0 !important;
+    border-right: 0 !important;
+    border-left: 0 !important; }
+    .alertjs.alertjs-alert h1 {
+      display: inline-block;
+      margin-right: 1em !important; }
+    .alertjs.alertjs-alert p {
+      display: inline-block; }
+  .alertjs.alertjs-error {
     color: #b94a48;
     background-color: #f2dede;
     border-color: #ce8383; }
-    .alertjs.error a {
+    .alertjs.alertjs-error a {
       color: #b94a48; }
-  .alertjs.warning {
+  .alertjs.alertjs-warning {
     color: #c09853;
     background-color: #fcf8e3;
     border-color: #f0db70; }
-    .alertjs.warning a {
+    .alertjs.alertjs-warning a {
       color: #c09853; }
-  .alertjs.info {
+  .alertjs.alertjs-info {
     color: #3a87ad;
     background-color: #d9edf7;
     border-color: #70bbe1; }
-    .alertjs.info a {
+    .alertjs.alertjs-info a {
       color: #3a87ad; }
-  .alertjs.success {
+  .alertjs.alertjs-success {
     color: #468847;
     background-color: #dff0d8;
     border-color: #93cd7c; }
-    .alertjs.success a {
+    .alertjs.alertjs-success a {
       color: #468847; }

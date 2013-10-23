@@ -11,12 +11,22 @@ $infoBgColor: #d9edf7;
 $successColor: #468847;
 $successBgColor: #dff0d8;
 
+body {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
 .alertjs-notifications {
 	z-index: 1000;
 	position: fixed;
 	bottom: 1em;
 	right: 1em;
 	width: auto;
+}
+
+.alertjs-alerts {
+	display: block;
+	height: auto;
 }
 
 .alertjs {
@@ -55,7 +65,7 @@ $successBgColor: #dff0d8;
 	}
 
 	a {
-		&.close {
+		&.alertjs-close {
 			position: absolute;
 			top: 1em;
 			right: 1em;
@@ -67,18 +77,29 @@ $successBgColor: #dff0d8;
 		}
 	}
 
-	&.notification {
+	&.alertjs-notification {
 		-webkit-border-radius: 5px;
         border-radius: 5px;
         width: 20em;
         margin-bottom: 1em;
 	}
 
-	&.alert {
+	&.alertjs-alert {
+		border-top: 0 !important;
+		border-right: 0 !important;
+		border-left: 0 !important;
 
+		h1 {
+			display: inline-block;
+			margin-right: 1em !important;
+		}
+
+		p {
+			display: inline-block;
+		}
 	}
 
-	&.error {
+	&.alertjs-error {
 		color: $errorColor;
 		background-color: $errorBgColor;
 		border-color: darken($errorBgColor, 25%);
@@ -88,7 +109,7 @@ $successBgColor: #dff0d8;
 		}
 	}
 
-	&.warning {
+	&.alertjs-warning {
 		color: $warningColor;
 		background-color: $warningBgColor;
 		border-color: darken($warningBgColor, 25%);
@@ -98,7 +119,7 @@ $successBgColor: #dff0d8;
 		}
 	}
 
-	&.info {
+	&.alertjs-info {
 		color: $infoColor;
 		background-color: $infoBgColor;
 		border-color: darken($infoBgColor, 25%);
@@ -108,7 +129,7 @@ $successBgColor: #dff0d8;
 		}
 	}
 
-	&.success {
+	&.alertjs-success {
 		color: $successColor;
 		background-color: $successBgColor;
 		border-color: darken($successBgColor, 25%);
