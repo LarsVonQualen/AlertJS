@@ -17,16 +17,21 @@ body {
 }
 
 .alertjs-notifications {
-	z-index: 1000;
 	position: fixed;
 	bottom: 1em;
 	right: 1em;
 	width: auto;
 }
 
-.alertjs-alerts {
-	display: block;
-	height: auto;
+.alertjs-overlay {
+	opacity: 0.5; 
+	background: #000; 
+	width: 100%;
+	height: 100%; 
+	z-index: 999;
+	top: 0; 
+	left: 0; 
+	position: fixed; 
 }
 
 .alertjs {
@@ -42,6 +47,7 @@ body {
 
 	position: relative;
 	display: none;
+	z-index: 1000;
 
 	border: {
 		width: 1px;
@@ -85,18 +91,31 @@ body {
 	}
 
 	&.alertjs-alert {
-		border-top: 0 !important;
-		border-right: 0 !important;
-		border-left: 0 !important;
+		-webkit-border-radius: 5px;
+        border-radius: 5px;
+        width: 20em;
+        position: absolute;
+        left: 50%;
+        top: 50%; 
+        margin-left: -10em;
+        margin-top: -7.5em;
 
-		h1 {
-			display: inline-block;
-			margin-right: 1em !important;
-		}
+        
+	}
 
-		p {
-			display: inline-block;
-		}
+	.alertjs-confirmBtn-wrapper
+	{
+		text-align: center;
+
+		a.alertjs-confirmBtn {
+	    	margin-top: 1em;
+	    	text-decoration: none;
+	    	display: block;
+	    	padding: 0.5em;
+	    	border: 1px solid;
+	    	-webkit-border-radius: 5px;
+        	border-radius: 5px;
+	    }
 	}
 
 	&.alertjs-error {
@@ -106,6 +125,15 @@ body {
 
 		a {
 			color: $errorColor;
+		}
+
+		.alertjs-confirmBtn-wrapper
+		{
+			a.alertjs-confirmBtn {
+				background-color: $errorColor;
+				color: $errorBgColor;
+				border-color: darken($errorBgColor, 25%);
+			}
 		}
 	}
 
@@ -117,6 +145,15 @@ body {
 		a {
 			color: $warningColor;
 		}
+
+		.alertjs-confirmBtn-wrapper
+		{
+			a.alertjs-confirmBtn {
+				background-color: $warningColor;
+				color: $warningBgColor;
+				border-color: darken($warningBgColor, 25%);
+			}
+		}
 	}
 
 	&.alertjs-info {
@@ -127,6 +164,15 @@ body {
 		a {
 			color: $infoColor;
 		}
+
+		.alertjs-confirmBtn-wrapper
+		{
+			a.alertjs-confirmBtn {
+				background-color: $infoColor;
+				color: $infoBgColor;
+				border-color: darken($infoBgColor, 25%);
+			}
+		}
 	}
 
 	&.alertjs-success {
@@ -136,6 +182,15 @@ body {
 
 		a {
 			color: $successColor;
+		}
+
+		.alertjs-confirmBtn-wrapper
+		{
+			a.alertjs-confirmBtn {
+				background-color: $successColor;
+				color: $successBgColor;
+				border-color: darken($successBgColor, 25%);
+			}
 		}
 	}
 }

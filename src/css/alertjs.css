@@ -4,15 +4,20 @@ body {
   margin: 0 !important; }
 
 .alertjs-notifications {
-  z-index: 1000;
   position: fixed;
   bottom: 1em;
   right: 1em;
   width: auto; }
 
-.alertjs-alerts {
-  display: block;
-  height: auto; }
+.alertjs-overlay {
+  opacity: 0.5;
+  background: #000;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  position: fixed; }
 
 .alertjs {
   -webkit-box-sizing: border-box;
@@ -27,6 +32,7 @@ body {
   padding: 1em;
   position: relative;
   display: none;
+  z-index: 1000;
   border-width: 1px;
   border-style: solid; }
   .alertjs h1 {
@@ -49,35 +55,61 @@ body {
     width: 20em;
     margin-bottom: 1em; }
   .alertjs.alertjs-alert {
-    border-top: 0 !important;
-    border-right: 0 !important;
-    border-left: 0 !important; }
-    .alertjs.alertjs-alert h1 {
-      display: inline-block;
-      margin-right: 1em !important; }
-    .alertjs.alertjs-alert p {
-      display: inline-block; }
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    width: 20em;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -10em;
+    margin-top: -7.5em; }
+  .alertjs .alertjs-confirmBtn-wrapper {
+    text-align: center; }
+    .alertjs .alertjs-confirmBtn-wrapper a.alertjs-confirmBtn {
+      margin-top: 1em;
+      text-decoration: none;
+      display: block;
+      padding: 0.5em;
+      border: 1px solid;
+      -webkit-border-radius: 5px;
+      border-radius: 5px; }
   .alertjs.alertjs-error {
     color: #b94a48;
     background-color: #f2dede;
     border-color: #ce8383; }
     .alertjs.alertjs-error a {
       color: #b94a48; }
+    .alertjs.alertjs-error .alertjs-confirmBtn-wrapper a.alertjs-confirmBtn {
+      background-color: #b94a48;
+      color: #f2dede;
+      border-color: #ce8383; }
   .alertjs.alertjs-warning {
     color: #c09853;
     background-color: #fcf8e3;
     border-color: #f0db70; }
     .alertjs.alertjs-warning a {
       color: #c09853; }
+    .alertjs.alertjs-warning .alertjs-confirmBtn-wrapper a.alertjs-confirmBtn {
+      background-color: #c09853;
+      color: #fcf8e3;
+      border-color: #f0db70; }
   .alertjs.alertjs-info {
     color: #3a87ad;
     background-color: #d9edf7;
     border-color: #70bbe1; }
     .alertjs.alertjs-info a {
       color: #3a87ad; }
+    .alertjs.alertjs-info .alertjs-confirmBtn-wrapper a.alertjs-confirmBtn {
+      background-color: #3a87ad;
+      color: #d9edf7;
+      border-color: #70bbe1; }
   .alertjs.alertjs-success {
     color: #468847;
     background-color: #dff0d8;
     border-color: #93cd7c; }
     .alertjs.alertjs-success a {
       color: #468847; }
+    .alertjs.alertjs-success .alertjs-confirmBtn-wrapper a.alertjs-confirmBtn {
+      background-color: #468847;
+      color: #dff0d8;
+      border-color: #93cd7c; }
