@@ -1,3 +1,10 @@
+/**
+ * AlertJS
+ *
+ * @author Lars von Qualen <lars@larsvonqualen.dk>
+ * @license MIT License
+ * @copyright Lars von Qualen 2013
+ */
 /* Colors */
 body {
   padding: 0 !important;
@@ -58,7 +65,7 @@ body {
     -webkit-border-radius: 5px;
     border-radius: 5px;
     width: 20em;
-    position: absolute;
+    position: fixed;
     left: 50%;
     top: 50%;
     margin-left: -10em;
