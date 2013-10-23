@@ -8,7 +8,7 @@ $(document).ready(function () {
 	});
 
 	$("#TriggerErrorNotification").on("click", function () {
-		AlertJS.Notify.Error("Error", "This is a error message.");
+		AlertJS.Notify.Error("Error", "This is an error message.");
 	});
 
 	$("#TriggerSuccessNotification").on("click", function () {
@@ -24,7 +24,7 @@ $(document).ready(function () {
 	});
 
 	$("#TriggerErrorAlert").on("click", function () {
-		AlertJS.Alert.Error("Error", "This is a error message.");
+		AlertJS.Alert.Error("Error", "This is an error message.");
 	});
 
 	$("#TriggerSuccessAlert").on("click", function () {

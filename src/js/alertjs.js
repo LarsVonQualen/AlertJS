@@ -1,6 +1,6 @@
 var AlertJS = (function (alertjs) {
 	alertjs.Init = function () {
-		$("body").append($("<div />").addClass("alertjs-notifications")).prepend($("<div />").addClass("alertjs-alerts"));
+		$("body").append($("<div />").addClass("alertjs-notifications"));
 	};
 
 	alertjs.Notify = (function (notify) {
@@ -59,55 +59,63 @@ var AlertJS = (function (alertjs) {
 	})(alertjs.Notify || {});
 
 	alertjs.Alert = (function (alert) {
-		var generateCloseButton = function () {
-			var btn = $("<a />").addClass("alertjs-close")
-								.attr("href", "javascript:void();")
-								.html("x")
-								.on("click", function (event) {
-									event.preventDefault();
-									$(this).parent().fadeOut();
-								});
-
-			return btn;
+		var showOverlay = function () {
+			$("body").append($("<div />").addClass("alertjs-overlay"));
 		};
 
-		var generateAlert = function (title, message, type) {
-			var notification = $("<div />").addClass("alertjs")
+		var hideOverlay = function () {
+			$("body").find(".alertjs-overlay").fadeOut();
+		};
+
+		var generateConfirmBtn = function (confirmCallback) {
+			var btn = $("<a />").addClass("alertjs-confirmBtn").attr("href", "javascript:void();").html("O.K").on("click", function (event) {
+				event.preventDefault();
+
+				typeof confirmCallback === 'function' && confirmCallback();
+
+				$(this).parent().parent().fadeOut();
+				hideOverlay();
+			});
+
+			var wrapper = $("<div />").addClass("alertjs-confirmBtn-wrapper").append(btn);
+
+			return wrapper;
+		};
+
+		var generateAlert = function (title, message, type, confirmCallback) {
+			var alert = $("<div />").addClass("alertjs")
 											.addClass("alertjs-alert")
 											.addClass("alertjs-" + type)
-											.append(generateCloseButton)
 											.append(
 													$("<h1 />").html(title)
 												)
 											.append(
 													$("<p />").html(message)
-												);
+												)
+											.append(generateConfirmBtn);
 
-			setTimeout(function () {
-				notification.fadeOut();
-			}, 10000);
-
-			return notification;
+			return alert;
 		};
 
-		var addAlert = function (title, message, type) {
-			$(document).find(".alertjs-alerts").append(generateAlert(title, message, type).fadeIn());
+		var addAlert = function (title, message, type, confirmCallback) {
+			showOverlay();
+			$("body").append(generateAlert(title, message, type, confirmCallback).show());
 		};
 
-		alert.Error = function (title, message) {
-			addAlert(title, message, "error");
+		alert.Error = function (title, message, confirmCallback) {
+			addAlert(title, message, "error", confirmCallback);
 		};
 
-		alert.Info = function (title, message) {
-			addAlert(title, message, "info");
+		alert.Info = function (title, message, confirmCallback) {
+			addAlert(title, message, "info", confirmCallback);
 		};
 
-		alert.Warning = function (title, message) {
-			addAlert(title, message, "warning");
+		alert.Warning = function (title, message, confirmCallback) {
+			addAlert(title, message, "warning", confirmCallback);
 		};
 
-		alert.Success = function (title, message) {
-			addAlert(title, message, "success");
+		alert.Success = function (title, message, confirmCallback) {
+			addAlert(title, message, "success", confirmCallback);
 		};
 
 		return alert;
