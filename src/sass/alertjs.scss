@@ -1,0 +1,141 @@
+/* Colors */
+$errorColor: #b94a48;
+$errorBgColor: #f2dede;
+
+$warningColor: #c09853;
+$warningBgColor: #fcf8e3;
+
+$infoColor: #3a87ad;
+$infoBgColor: #d9edf7;
+
+$successColor: #468847;
+$successBgColor: #dff0d8;
+
+body {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.alertjs-notifications {
+	z-index: 1000;
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
+	width: auto;
+}
+
+.alertjs-alerts {
+	display: block;
+	height: auto;
+}
+
+.alertjs {
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+
+	-webkit-box-shadow:  0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+    box-shadow:  0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+
+	font-family: sans-serif;
+	padding: 1em;
+
+	position: relative;
+	display: none;
+
+	border: {
+		width: 1px;
+		style: solid;
+	}
+
+	h1 {
+		font: {
+			size: 14pt;
+			weight: bold;
+		}
+
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	p {
+		font-size: 10pt;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	a {
+		&.alertjs-close {
+			position: absolute;
+			top: 1em;
+			right: 1em;
+			text-decoration: none;
+			
+			&:hover {
+
+			}
+		}
+	}
+
+	&.alertjs-notification {
+		-webkit-border-radius: 5px;
+        border-radius: 5px;
+        width: 20em;
+        margin-bottom: 1em;
+	}
+
+	&.alertjs-alert {
+		border-top: 0 !important;
+		border-right: 0 !important;
+		border-left: 0 !important;
+
+		h1 {
+			display: inline-block;
+			margin-right: 1em !important;
+		}
+
+		p {
+			display: inline-block;
+		}
+	}
+
+	&.alertjs-error {
+		color: $errorColor;
+		background-color: $errorBgColor;
+		border-color: darken($errorBgColor, 25%);
+
+		a {
+			color: $errorColor;
+		}
+	}
+
+	&.alertjs-warning {
+		color: $warningColor;
+		background-color: $warningBgColor;
+		border-color: darken($warningBgColor, 25%);
+
+		a {
+			color: $warningColor;
+		}
+	}
+
+	&.alertjs-info {
+		color: $infoColor;
+		background-color: $infoBgColor;
+		border-color: darken($infoBgColor, 25%);
+
+		a {
+			color: $infoColor;
+		}
+	}
+
+	&.alertjs-success {
+		color: $successColor;
+		background-color: $successBgColor;
+		border-color: darken($successBgColor, 25%);
+
+		a {
+			color: $successColor;
+		}
+	}
+}
