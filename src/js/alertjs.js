@@ -7,8 +7,14 @@
  */
 
 var AlertJS = (function (alertjs) {
-	alertjs.Init = function () {
+    var preDomNotificationStack = [];
+    var preDomAlertStack = [];
+    var ready = false;
+    
+	alertjs.Init = function (callback) {
 		$("body").append($("<div />").addClass("alertjs-notifications"));
+        ready = true;
+        callback(preDomNotificationStack, preDomAlertStack);
 	};
 
 	alertjs.Notify = (function (notify) {
@@ -43,24 +49,32 @@ var AlertJS = (function (alertjs) {
 			return notification;
 		};
 
-		var addNotification = function (title, message, type) {
-			$(document).find(".alertjs-notifications").append(generateNotification(title, message, type).fadeIn());
+		notify.addNotification = function (title, message, type) {
+            if (!ready) {
+                preDomNotificationStack.push({
+                    title: title,
+                    message: message,
+                    type: type
+                });
+            } else {
+                $(document).find(".alertjs-notifications").append(generateNotification(title, message, type).fadeIn());
+            }
 		};
 
 		notify.Error = function (title, message) {
-			addNotification(title, message, "error");
+			notify.addNotification(title, message, "error");
 		};
 
 		notify.Info = function (title, message) {
-			addNotification(title, message, "info");
+			notify.addNotification(title, message, "info");
 		};
 
 		notify.Warning = function (title, message) {
-			addNotification(title, message, "warning");
+			notify.addNotification(title, message, "warning");
 		};
 
 		notify.Success = function (title, message) {
-			addNotification(title, message, "success");
+			notify.addNotification(title, message, "success");
 		};
 
 		return notify;
@@ -105,33 +119,52 @@ var AlertJS = (function (alertjs) {
 			return alert;
 		};
 
-		var addAlert = function (title, message, type, confirmCallback) {
-			showOverlay();
-			$("body").append(generateAlert(title, message, type, confirmCallback).show());
+		alert.addAlert = function (title, message, type, confirmCallback) {
+            if (!ready) {
+                preDomAlertStack.push({
+                    title: title,
+                    message: message,
+                    type: type,
+                    callback: confirmCallback
+                });
+            } else {
+                showOverlay();
+                $("body").append(generateAlert(title, message, type, confirmCallback).show());
+            }
 		};
 
 		alert.Error = function (title, message, confirmCallback) {
-			addAlert(title, message, "error", confirmCallback);
+			alert.addAlert(title, message, "error", confirmCallback);
 		};
 
 		alert.Info = function (title, message, confirmCallback) {
-			addAlert(title, message, "info", confirmCallback);
+			alert.addAlert(title, message, "info", confirmCallback);
 		};
 
 		alert.Warning = function (title, message, confirmCallback) {
-			addAlert(title, message, "warning", confirmCallback);
+			alert.addAlert(title, message, "warning", confirmCallback);
 		};
 
 		alert.Success = function (title, message, confirmCallback) {
-			addAlert(title, message, "success", confirmCallback);
+			alert.addAlert(title, message, "success", confirmCallback);
 		};
 
 		return alert;
 	})(alertjs.Alert || {});
 
+    $(document).ready(function () {
+        alertjs.Init(function (notifications, alerts) {
+            for (i = 0; i < notifications.length; i++) {
+                var notification = notifications[i];
+                alertjs.Notify.addNotification(notification.title, notification.message, notification.type);
+            }
+            
+            for (i = 0; i < alerts.length; i++) {
+                var alert = alerts[i];
+                alertjs.Alert.addAlert(alert.title, alert.message, alert.type, alert.callback);
+            }
+        });
+    });
+    
 	return alertjs;
 })(AlertJS || {});
-
-$(document).ready(function () {
-	AlertJS.Init();
-});
