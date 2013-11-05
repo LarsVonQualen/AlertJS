@@ -1,3 +1,12 @@
+AlertJS.Notify.Info("Info", "Pre dom ready informational message.");
+AlertJS.Notify.Warning("Warning", "Pre dom ready warning message.");
+AlertJS.Notify.Error("Error", "Pre dom ready error message.");
+AlertJS.Notify.Success("Success", "TPre dom ready success message.");
+AlertJS.Alert.Info("Info", "Pre dom ready informational message.");
+AlertJS.Alert.Warning("Warning", "Pre dom ready warning message.");
+AlertJS.Alert.Error("Error", "Pre dom ready error message.");
+AlertJS.Alert.Success("Success", "TPre dom ready success message.");
+
 $(document).ready(function () {
 	$("#TriggerInfoNotification").on("click", function () {
 		AlertJS.Notify.Info("Info", "This is an informational message.");
