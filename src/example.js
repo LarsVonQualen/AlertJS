@@ -1,4 +1,4 @@
-AlertJS.Notify.Info("Info", "Pre dom ready informational message.");
+AlertJS.Notify.Info("Info", "Pre dom ready informational message.", true);
 AlertJS.Notify.Warning("Warning", "Pre dom ready warning message.");
 AlertJS.Notify.Error("Error", "Pre dom ready error message.");
 AlertJS.Notify.Success("Success", "Pre dom ready success message.");
