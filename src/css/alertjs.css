@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * AlertJS
  *
@@ -16,6 +17,10 @@ body {
   right: 1em;
   width: auto; }
 
+.alertjs-notifications-top {
+  display: block;
+  width: 100%; }
+
 .alertjs-overlay {
   opacity: 0.5;
   background: #000;
@@ -25,6 +30,14 @@ body {
   top: 0;
   left: 0;
   position: fixed; }
+
+.clearfix, .alertjs.alertjs-notification-top:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
 
 .alertjs {
   -webkit-box-sizing: border-box;
@@ -51,16 +64,34 @@ body {
     font-size: 10pt;
     margin: 0 !important;
     padding: 0 !important; }
-  .alertjs a.alertjs-close {
-    position: absolute;
-    top: 1em;
-    right: 1em;
+  .alertjs a {
     text-decoration: none; }
+    .alertjs a.alertjs-close {
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      content: '✗'; }
   .alertjs.alertjs-notification {
     -webkit-border-radius: 5px;
     border-radius: 5px;
     width: 20em;
     margin-bottom: 1em; }
+  .alertjs.alertjs-notification-top {
+    width: 100%;
+    padding: 0.5em; }
+    .alertjs.alertjs-notification-top .alertjs-message {
+      float: left; }
+      .alertjs.alertjs-notification-top .alertjs-message h1 {
+        font-size: 1em;
+        font-weight: bold;
+        display: inline-block !important;
+        margin: 0;
+        margin-right: 0.5em !important; }
+      .alertjs.alertjs-notification-top .alertjs-message p {
+        display: inline-block; }
+    .alertjs.alertjs-notification-top .alertjs-close-btn {
+      float: right;
+      content: '✗'; }
   .alertjs.alertjs-alert {
     -webkit-border-radius: 5px;
     border-radius: 5px;

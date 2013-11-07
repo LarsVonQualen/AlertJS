@@ -31,6 +31,11 @@ body {
 	width: auto;
 }
 
+.alertjs-notifications-top {
+    display: block;
+    width: 100%;
+}
+
 .alertjs-overlay {
 	opacity: 0.5; 
 	background: #000; 
@@ -40,6 +45,15 @@ body {
 	top: 0; 
 	left: 0; 
 	position: fixed; 
+}
+
+.clearfix {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
 }
 
 .alertjs {
@@ -79,11 +93,13 @@ body {
 	}
 
 	a {
+        text-decoration: none;
+    
 		&.alertjs-close {
 			position: absolute;
 			top: 1em;
 			right: 1em;
-			text-decoration: none;
+			content: '✗';
 			
 			&:hover {
 
@@ -98,6 +114,39 @@ body {
         margin-bottom: 1em;
 	}
 
+    &.alertjs-notification-top {
+        width: 100%;
+        padding: 0.5em;
+    
+        .alertjs-message {
+            float: left;
+        
+            h1 {
+                font: {
+                    size: 1em;
+                    weight: bold;
+                }
+                
+                display: inline-block !important;
+                margin: 0;
+                margin-right: 0.5em !important;
+            }
+
+            p {
+                display: inline-block;
+            }
+        }
+
+        .alertjs-close-btn {
+            float: right;
+            content: '✗';
+        }
+
+        &:after {
+            @extend .clearfix;
+        }
+    }
+
 	&.alertjs-alert {
 		-webkit-border-radius: 5px;
         border-radius: 5px;
@@ -107,8 +156,6 @@ body {
         top: 50%; 
         margin-left: -10em;
         margin-top: -7.5em;
-
-        
 	}
 
 	.alertjs-confirmBtn-wrapper
