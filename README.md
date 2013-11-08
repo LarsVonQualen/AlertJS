@@ -2,6 +2,13 @@
 
 Easy javascript notification and alert system.
 
+# Features
+- Custom modal alerts.
+- Notifications popping up in the bottom right corner.
+- Notifications popping down from the top of the page.
+- Pre DOM ready queue, that fires at DOM ready.
+- Four different notification sounds.
+
 # How To
 
 The library is very simple to use. Make sure you include the css in the header, and the javascript in the end of the `<body>` tag AFTER jQuery, and you are ready to pop some notifications or alerts!

@@ -2,3 +2,4 @@
 *.DS_Store
 *encoded/
 *node_modules/
+src/node_modules/*
