@@ -14,23 +14,19 @@ var AlertJS = (function (alertjs) {
     var sounds = {
         Error: {
             mp3: "",
-            ogg: "",
-            wav: ""
+            ogg: ""
         },
         Info: {
             mp3: "",
-            ogg: "",
-            wav: ""
+            ogg: ""
         },
         Warning: {
             mp3: "",
-            ogg: "",
-            wav: ""
+            ogg: ""
         },
         Success: {
             mp3: "",
-            ogg: "",
-            wav: ""
+            ogg: ""
         }
     };
     var settings = {
