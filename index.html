@@ -51,8 +51,8 @@
 
 <p>Easy javascript notification and alert system.</p>
 
-<h2>
-<a name="how-to" class="anchor" href="#how-to"><span class="octicon octicon-link"></span></a>How To</h2>
+<h1>
+<a name="how-to" class="anchor" href="#how-to"><span class="octicon octicon-link"></span></a>How To</h1>
 
 <p>The library is very simple to use. Make sure you include the css in the header, and the javascript in the end of the <code>&lt;body&gt;</code> tag AFTER jQuery, and you are ready to pop some notifications or alerts!</p>
 
@@ -80,10 +80,30 @@ AlertJS.Alert.Error("Some Title", "Some error message.");
 AlertJS.Alert.Success("Some Title", "Some success message.");
 </code></pre>
 
+<h1>
+<a name="sound" class="anchor" href="#sound"><span class="octicon octicon-link"></span></a>Sound</h1>
+
+<p>The lib supports playing four different sounds, according to each notification type. The sound is activated either through global settings:</p>
+
+<pre><code>AlertJS.Settings({
+    sound: true
+});
+</code></pre>
+
+<p>or by adding a boolean value to the notification call, like so:</p>
+
+<pre><code>AlertJS.Notify.Info("Some Title", "Some informational message.", true);
+</code></pre>
+
 <p>For further details, check of the example.html file.</p>
 
-<h2>
-<a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>Dependencies</h2>
+<h1>
+<a name="be-warned" class="anchor" href="#be-warned"><span class="octicon octicon-link"></span></a>BE WARNED</h1>
+
+<p>This lib is BIG at around 3 MB, so make sure to have reasonably cache settings, OR hack the lib not to include the audio data. Happy hacking!</p>
+
+<h1>
+<a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>Dependencies</h1>
 
 <ul>
 <li>jQuery (only tested with 2.0.3)</li>
