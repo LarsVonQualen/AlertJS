@@ -1,4 +1,4 @@
-AlertJS.Notify.Info("Info", "Pre dom ready informational message.");
+AlertJS.Notify.Info("Info", "Pre dom ready informational message.", true);
 AlertJS.Notify.Warning("Warning", "Pre dom ready warning message.");
 AlertJS.Notify.Error("Error", "Pre dom ready error message.");
 AlertJS.Notify.Success("Success", "Pre dom ready success message.");
@@ -13,19 +13,19 @@ AlertJS.Notify.Top.Success("Success", "Pre dom ready success message.");
 
 $(document).ready(function () {
 	$("#TriggerInfoNotification").on("click", function () {
-		AlertJS.Notify.Info("Info", "This is an informational message.");
+		AlertJS.Notify.Info("Info", "This is an informational message.", true);
 	});
 
 	$("#TriggerWarningNotification").on("click", function () {
-		AlertJS.Notify.Warning("Warning", "This is a warning message.");
+		AlertJS.Notify.Warning("Warning", "This is a warning message.", true);
 	});
 
 	$("#TriggerErrorNotification").on("click", function () {
-		AlertJS.Notify.Error("Error", "This is an error message.");
+		AlertJS.Notify.Error("Error", "This is an error message.", true);
 	});
 
 	$("#TriggerSuccessNotification").on("click", function () {
-		AlertJS.Notify.Success("Success", "This is a success message.");
+		AlertJS.Notify.Success("Success", "This is a success message.", true);
 	});
     
     $("#TriggerInfoNotificationTop").on("click", function () {
