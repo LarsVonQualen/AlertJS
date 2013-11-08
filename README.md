@@ -1,10 +1,8 @@
-AlertJS
-=======
+# AlertJS
 
 Easy javascript notification and alert system.
 
-How To
-------
+# How To
 
 The library is very simple to use. Make sure you include the css in the header, and the javascript in the end of the `<body>` tag AFTER jQuery, and you are ready to pop some notifications or alerts!
 
@@ -31,6 +29,8 @@ If you want to show a modal alert, you simply make one of the following calls:
 
 For further details, check of the example.html file.
 
-Dependencies
-------------
+# BE WARNED
+This lib is BIG, so make sure to have reasonably cache settings, OR hack the lib not to include the audio data. Happy hacking!
+
+# Dependencies
 * jQuery (only tested with 2.0.3)
