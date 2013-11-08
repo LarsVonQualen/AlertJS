@@ -52,3 +52,6 @@ This lib is BIG at around 3 MB, so make sure to have reasonably cache settings, 
 
 # Dependencies
 * jQuery (only tested with 2.0.3)
+
+# Credits
+- A big thanks goes to Lauritz Munch (https://soundcloud.com/main-pitch) who made the four awesome sounds!
