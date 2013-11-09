@@ -9,6 +9,9 @@ Easy javascript notification and alert system.
 - Pre DOM ready queue, that fires at DOM ready.
 - Four different notification sounds.
 
+# Example
+An example page can be found here: http://larsvonqualen.github.io/AlertJS/example/
+
 # How To
 
 The library is very simple to use. Make sure you include the css in the header, and the javascript in the end of the `<body>` tag AFTER jQuery, and you are ready to pop some notifications or alerts!
