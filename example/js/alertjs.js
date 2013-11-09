@@ -154,7 +154,7 @@ var AlertJS = (function (alertjs) {
                 .append($("<div />").append($("<h1 />").html(title)).append($("<p />").html(message)).addClass("alertjs-message"));
                 
                 if (settings.sound == true || sound == true) { 
-                    PlaySound();
+                    PlaySound(sounds[type]);
                 }
                 
                 setTimeout(function () {
@@ -238,7 +238,7 @@ var AlertJS = (function (alertjs) {
             .append(generateConfirmBtn);
             
             if (settings.sound == true || sound == true) { 
-                PlaySound();
+                PlaySound(sounds[type]);
             }
             
             return alert;
