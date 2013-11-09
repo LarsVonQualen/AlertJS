@@ -34,7 +34,7 @@ var AlertJS = (function (alertjs) {
         }
     };
     var settings = {
-        sound: false
+        sound: true
     };
     
     alertjs.Init = function (callback) {
@@ -46,10 +46,11 @@ var AlertJS = (function (alertjs) {
     };
     
     alertjs.Settings = function (newSettings) {
-        if (settings === undefined) {
+        if (newSettings === undefined) {
             return settings;
         } else {
             settings = newSettings;
+            return settings;
         }
     };
     

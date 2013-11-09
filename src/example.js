@@ -1,31 +1,28 @@
-AlertJS.Notify.Info("Info", "Pre dom ready informational message.", true);
-AlertJS.Notify.Warning("Warning", "Pre dom ready warning message.");
-AlertJS.Notify.Error("Error", "Pre dom ready error message.");
-AlertJS.Notify.Success("Success", "Pre dom ready success message.");
-AlertJS.Notify.Top.Info("Info", "Pre dom ready informational message.");
-AlertJS.Notify.Top.Warning("Warning", "Pre dom ready warning message.");
-AlertJS.Notify.Top.Error("Error", "Pre dom ready error message.");
-AlertJS.Notify.Top.Success("Success", "Pre dom ready success message.");
-//AlertJS.Alert.Info("Info", "Pre dom ready informational message.");
-//AlertJS.Alert.Warning("Warning", "Pre dom ready warning message.");
-//AlertJS.Alert.Error("Error", "Pre dom ready error message.");
-//AlertJS.Alert.Success("Success", "TPre dom ready success message.");
-
 $(document).ready(function () {
+    $.each($(".settings").children(), function (obj, index) {
+        var settings = AlertJS.Settings();
+        $(this).prop("checked", settings[$(this).data("setting")]);
+    });
+    
+    $(".setting").on("change", function () {
+        var settings = AlertJS.Settings();
+        settings[$(this).data("setting")] = $(this).prop("checked");
+    });
+    
 	$("#TriggerInfoNotification").on("click", function () {
-		AlertJS.Notify.Info("Info", "This is an informational message.", true);
+		AlertJS.Notify.Info("Info", "This is an informational message.");
 	});
 
 	$("#TriggerWarningNotification").on("click", function () {
-		AlertJS.Notify.Warning("Warning", "This is a warning message.", true);
+		AlertJS.Notify.Warning("Warning", "This is a warning message.");
 	});
 
 	$("#TriggerErrorNotification").on("click", function () {
-		AlertJS.Notify.Error("Error", "This is an error message.", true);
+		AlertJS.Notify.Error("Error", "This is an error message.");
 	});
 
 	$("#TriggerSuccessNotification").on("click", function () {
-		AlertJS.Notify.Success("Success", "This is a success message.", true);
+		AlertJS.Notify.Success("Success", "This is a success message.");
 	});
     
     $("#TriggerInfoNotificationTop").on("click", function () {
