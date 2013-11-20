@@ -59,9 +59,6 @@ This can be done for all four alert types: `error`, `info`, `warning`, `success`
 
 For further details, check of the example.html file.
 
-# BE WARNED
-This lib is BIG at around 3 MB, so make sure to have reasonably cache settings, OR hack the lib not to include the audio data. Happy hacking!
-
 # Dependencies
 * jQuery (only tested with 2.0.3)
 
