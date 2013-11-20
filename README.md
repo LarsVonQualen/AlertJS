@@ -40,13 +40,22 @@ If you want to show a modal alert, you simply make one of the following calls:
 # Sound
 The lib supports playing four different sounds, according to each notification type. The sound is activated either through global settings:
     
-    AlertJS.Settings({
-        sound: true
-    });
+    AlertJS.setSetting("sound", true);
     
 or by adding a boolean value to the notification call, like so:
 
     AlertJS.Notify.Info("Some Title", "Some informational message.", true);
+    
+In order to include actual sound data either include the `alertjs.sounds.js` file, or inject base64 encoded data or url's into the appropriate setting like this:
+
+    AlertJS.setSetting("sounds", {
+        error: {
+            mp3: "base64_encoded_data",
+            ogg: "http://some.url.com"
+        }
+    });
+    
+This can be done for all four alert types: `error`, `info`, `warning`, `success`. If in doubt, look in the `alertjs.sounds.js` file.
 
 For further details, check of the example.html file.
 

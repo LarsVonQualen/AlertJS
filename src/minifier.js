@@ -5,7 +5,11 @@ new compressor.minify({
     fileIn: 'js/alertjs.js',
     fileOut: 'js/alertjs.min.js',
     callback: function(err, min){
-        console.log(err);
+        console.log("Uglifying");
+        
+        if (err) {
+            console.log(err);
+        }
     }
 });
 
@@ -14,7 +18,10 @@ new compressor.minify({
     fileIn: 'css/alertjs.css',
     fileOut: 'css/alertjs.min.css',
     callback: function(err, min){
-        console.log('Sqwish');
-        console.log(err);
+        console.log("Sqwishing");
+        
+        if (err) {
+            console.log(err);
+        }
     }
 });
