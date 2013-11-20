@@ -15,7 +15,7 @@ var AlertJS = (function (alertjs) {
     var settings = {
         timeout: 10000,
         sound: true,
-        sounds: null
+        sounds: {}
     };
     
     alertjs.Init = function (callback) {
@@ -44,7 +44,7 @@ var AlertJS = (function (alertjs) {
     };
     
     var PlaySound = function (sound) {
-        if (settings.sounds !== null) {
+        if (settings.sounds !== {} && sound != undefined) {
             var player = $("<audio />").attr("autoplay", "autoplay");
         
             if (sound.mp3 != undefined) {
