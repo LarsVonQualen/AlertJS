@@ -51,7 +51,7 @@ In order to include actual sound data either include the `alertjs.sounds.js` fil
     AlertJS.setSetting("sounds", {
         error: {
             mp3: "base64_encoded_data",
-            ogg: "http://someurl.com"
+            ogg: "http://some.url.com"
         }
     });
     
